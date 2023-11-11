@@ -63,6 +63,5 @@ function getLocale(request: NextRequest): string | undefined {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|manifest.json|service-worker.js|icons/android-chrome-192x192.png|icons/android-chrome-512x512.png).*)'
-  ]
+    '/((?!api|_next/static|_next/image|favicon.ico|manifest.json|service-worker.js|icons\/android-chrome-192x192.png|icons\/android-chrome-512x512.png|^workbox-.*\.js$).*)/' ]
 }
