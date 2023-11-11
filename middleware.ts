@@ -51,7 +51,7 @@ export async function middleware(request: NextRequest) {
 function getLocale(request: NextRequest): string | undefined {
 
   const negotiatorHeaders: Record<string, string> = {}
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
+  request.headers.forEach((value: string, key: string | number) => (negotiatorHeaders[key] = value))
 
   const locales = [...i18n.locales]
   
@@ -63,6 +63,6 @@ function getLocale(request: NextRequest): string | undefined {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|manifest.json|service-worker.js).*)'
+    '/((?!api|_next/static|_next/image|favicon.ico|manifest.json|service-worker.js|icons/android-chrome-192x192.png|icons/android-chrome-512x512.png).*)'
   ]
 }
